@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx,url}
+\usepackage{float}
+
+\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}  
+
+     
+\sloppy
+
+\title{Uma Proposta de Camada de Aplicação baseada no Padrão IEEE 11073 para Simulação de Aplicações de Saúde Digital em Redes Corporais sem Fio}
+
+\author{Robson A. Lima, Vinicius C. Ferreira, Egberto Caballero,\\ Célio V. N. Albuquerque, Débora C. Muchaluat Saade}
+
+\address{Laboratório MídiaCom, Instituto de Computação -- Universidade Federal Fluminense
+  (UFF)\\
+  Niterói -- RJ -- Brasil
+  \email{\{robsonal, vinicius, egbertocr,  debora, celio\} @midiacom.uff.br}
+}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+Simulating new protocols in WirelessBody Area Networks (WBANs) is important to evaluate new proposals before developing a real implementation. However, WBAN simulators only provide generic network applications, thus it is not possible to simulate a health device in a WBAN network. Therefore, this work proposes an application layer based on the ISO/IEEE 11073 Standard (X73-PHD) for simulating e-health applications in WBANs. Our proposal is implemented for the Castalia simulator, using the Antidote library, an open implementation of X73-PHD. Simulation results show that the X73-PHD standard communication model does not perform well due to long timeouts defined in the standard. Therefore, this paper also proposes a new communication mode, which reduces the exchange of control packets and the number of associations made by personal health devices in WBANs.
+%Simulating new protocols for e-health systems is very important, as it allows an initial evaluation before a real implementation is made. On the other hand, network simulators do not offer proper support to represent medical applications or components to facilitate running simulations modeling e-health applications. Aiming at fulfilling this gap, this paper proposes a free and open-source implementation of Personal Health Devices (PHD) for Castalia Simulator. We implemented five different PHDs to act like real ISO/IEEE 11073 devices in Wireless Body Area Network (WBAN) simulations. Our implementation also supports a confirmed communication mode, where the receiver sends an  acknowledgement to the sender every time it receives a packet. Simulation results showed that the confirmed communication mode did not perform well in WBANs due to the long period of timeout proposed in the ISO/IEEE 11073 standard. Therefore, we propose an extension to the standard that decreases the overhead of control packets over the network.
+\end{abstract}
+     
+\begin{resumo}
+%Avanços na comunicação wireless e em dispositivos para saúde, tornou possível a utilização de sensores em Wireless Body Area Networks (WBANs). 
+Simular novos protocolos em Redes Corporais sem Fio (Wireless Body Area Networks - WBANs) é importante para fazer uma avaliação da proposta antes de partir para desenvolver uma implementação real. Contudo, simuladores de WBANs apenas oferecem aplicações genéricas de rede, não sendo possível simular um dispositivo de saúde em uma rede WBAN. Sendo assim, este trabalho propõe uma camada de aplicação baseada no Padrão ISO/IEEE 11073 para simulação de aplicações de saúde digital em WBANs. A proposta é implementada no simulador Castalia, usando como base a biblioteca Antidote, uma implementação de código aberto de dispositivos ISO/IEEE 11073 (X73-PHD).
+%Esta implementação suporta o modo de comunicação com confirmação como definido na norma, onde o receptor envia uma confirmação ao remetente toda vez que recebe um pacote. 
+Resultados de simulação mostram que o modelo de comunicação padrão da norma X73-PHD não apresenta um bom desempenho devido a longos \textit{timeouts} definidos na norma. Portanto, este artigo também propõe um novo modo de comunicação, que reduz a troca de pacotes de controles e o número de associações feitas pelos dispositivos de saúde em WBANs.
+\end{resumo}
+
+
+\input{sections/introduction.tex}
+\input{sections/relatedWorks.tex}
+%\input{sections/systemArchitecture.tex}
+\input{sections/castaliaApplication.tex}
+\input{sections/results.tex}
+\input{sections/conclusion.tex}
+
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=.5\textwidth]{fig1.jpg}
+%\caption{A typical figure}
+%\label{fig:exampleFig1} 
+%\end{figure}
+
+%\begin{table}[ht]
+%\centering 
+%\caption{Variables to be considered on the evaluation of interaction
+%techniques}
+%\label{tab:exTable1}
+%\includegraphics[width=.7\textwidth]{table.jpg}
+%\end{table}
+
+\bibliographystyle{sbc}
+\bibliography{newbib}
+
+\end{document}
